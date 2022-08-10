@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>...</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "microfrontend-1": "http://localhost:53146/microfrontend-1.js",
+          "microfrontend-2": "http://localhost:53146/microfrontend-2.js"
+        }
+      }
+    </script>
+    <script type="module">
+      const eventBus = document.createElement("div");
+
+      import defineMF1 from "microfrontend-1";
+      import defineMF2 from "microfrontend-2";
+
+      defineMF1({ eventBus });
+      defineMF2({ eventBus });
+    </script>
+  </head>
+  <body>
+    <microfrontend-1></microfrontend-1>
+    <microfrontend-2></microfrontend-2>
+  </body>
+</html>
